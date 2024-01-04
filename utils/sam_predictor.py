@@ -45,7 +45,8 @@ def segment_image(pil_image: Image.Image, box:np.ndarray):
             mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2RGB)
             img = Image.fromarray(image_rgb)
             mask = Image.fromarray(mask)
-            new_img = Image.new("RGBA", img.size, (0, 0, 0, 0))
+            # new_img = Image.new("RGBA", img.size, (0, 0, 0, 0))
+            new_img = Image.new("RGBA", img.size, (255, 255, 255))
 
             # Görüntünün istediğiniz bölümlerini maskeye göre seçin ve kopyalayın
             for x in range(img.size[0]):
